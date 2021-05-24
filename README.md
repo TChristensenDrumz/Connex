@@ -9,10 +9,6 @@ This project is a simple chat app that allows users to create and join chat room
 <br>
 [License](#License)
 <br>
-[Contributing](#Contributing)
-<br>
-[Tests](#Tests)
-<br>
 [Questions](#Questions)
 
 ## Installation
