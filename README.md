@@ -1,1 +1,1 @@
-# Connex
+# simple-chat-starter

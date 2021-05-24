@@ -1,0 +1,35 @@
+.room-input {
+    font-size: 2em;
+    border: 1px solid #c88b96;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.room-input:focus {
+    border-radius: 5px;
+}
+
+.join-btn {
+    background-color: rgb(37, 40, 48);
+    color: rgb(28, 168, 221);
+    border: 1px solid rgb(28, 168, 221);
+    margin: 0px auto;
+    border-radius: 4px;
+    width: 20%;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.join-btn:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.join-btn:focus {
+    cursor: pointer;
+    background-color: rgb(235, 237, 243);
+}
