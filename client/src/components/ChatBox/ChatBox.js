@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ChatBox = ({ children }) => {
     return (
@@ -6,6 +6,6 @@ const ChatBox = ({ children }) => {
             {children}
         </div>
     )
-}
+};
 
 export default ChatBox;

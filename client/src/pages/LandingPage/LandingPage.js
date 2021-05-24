@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import "./LandingPage.css";
-import { Redirect } from "react-router-dom"
 
 const style = {
     wrapper: {
@@ -35,37 +35,39 @@ class LandingPage extends Component {
     };
 
     handleChange = e => {
-        const { name, value } = e.target
-        this.setState({ ...this.state, [name]: value });
+        const { value, name } = e.target;
+        this.setState({...this.state, [name]: value })
     };
 
     handleClick = () => {
-        localStorage.setItem("userInfo", JSON.stringify(this.state));
+        localStorage.setItem("userInfo", JSON.stringify(this.state))
         this.handleRedirectState();
     };
 
     handleRedirectState = () => {
-        this.setState({ ...this.state, redirect: true });
+        this.setState({ ...this.state, redirect: true })
     };
 
-    handleSelect = ({ target }) => {
-        this.setState({ ...this.state, avatar: target.value });
-    };
+    handleSelect = e => {
+        console.log(e.target)
+        this.setState({ ...this.state, avatar: e.target.value})
+    }
 
     renderRedirect = () => {
         if(this.state.redirect) {
-            return <Redirect to={`/chatroom/${this.state.roomName}`} />
+            return <Redirect to={`/chatbox/${this.state.roomName}`} />
         }
     };
 
     render() {
-        return (
+        console.log(this.state)
+        return(
             <div style={style.wrapper}>
                 <h1 style={style.h1Title}>Connex</h1>
-                <input className="room-input" onChange={this.handleChange} placeholder="Username" name="username" />
-                <input className="room-input" onChange={this.handleChange} placeholder="Title" name="title" />
-                <input className="room-input" onChange={this.handleChange} placeholder="Room Name" name="roomName" />
-                <select onChange={this.handleSelect} style={{display: "flex", margin: "0 auto", marginBottom: "1em"}}>
+                <input onChange={this.handleChange} className="room-input" placeholder="Username" name="username"/>
+                <input onChange={this.handleChange} className="room-input" placeholder="Title" name="title"/>
+                <input onChange={this.handleChange} className="room-input" placeholder="Room ID" name="roomName"/>
+                <select onChange={this.handleSelect} style={{display: 'flex', margin: '0 auto', marginBottom: '1em'}}>
                     <option value="https://st2.depositphotos.com/3369547/11372/v/950/depositphotos_113724550-stock-illustration-businessman-concept-avatar-male-person.jpg">Male Avatar</option>
                     <option value="https://st2.depositphotos.com/2703645/11507/v/950/depositphotos_115078618-stock-illustration-woman-avatar-character.jpg">Female Avatar</option>
                 </select>
@@ -74,6 +76,6 @@ class LandingPage extends Component {
             </div>
         )
     }
-}
+};
 
-export default LandingPage
+export default LandingPage;
