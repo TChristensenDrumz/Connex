@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "production") {
 
 const app = express(),
   server = app.listen(PORT, () =>
-    console.log("Server is listening on " + PORT)
+    console.log(`Server is listening on port ${PORT}`)
   );
 
 app.use(cors());
